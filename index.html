@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Chuck Norris Jokes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="unholy-core.css">
+  <link rel="stylesheet" href="unholy-utility.css">
+
+  <style>
+   body{
+      padding: 2%;
+    }
+    
+    h1{
+        padding-left: 30px;
+    }
+  </style>
+</head>
+
+<body onload="getChuck()">
+
+    <div class="container">
+
+      <div class="row">
+        <div class="column-half">
+            <div class="wrapper">
+                <img id="chuckImg" class="curved shadow" src="" alt="photo of Chuck Norris">
+            </div>
+        </div>
+        <div class="column-half">
+            <div>
+                <h1 id="joke">
+                    
+            </div>    
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+function getChuck()
+{
+    getJoke();
+    getImage();
+}
+
+function getJoke()
+{
+   fetch('https://api.icndb.com/jokes/random?exclude=[explicit]')
+  .then(response => response.json())
+  .then(json => document.getElementById("joke").innerHTML = json["value"]["joke"])
+}
+
+function getImage()
+{
+    document.getElementById("chuckImg").src = "images/".concat(Math.floor(Math.random() * 5) + 1 ).concat(".jpg");
+}
+</script>
+
