@@ -7,9 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="unholy-core.css">
   <link rel="stylesheet" href="unholy-utility.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
   <style>
    body{padding: 2%;}
+
+  * > .fa-spin-show,
+  *:hover > .fa-spin-hidden,
+  *:focus > .fa-spin-hidden {
+    display: none;
+  }
+  *:focus > .fa-spin-show,
+  *:hover > .fa-spin-show {
+    display: inline-block;
+  }
+  .tooltip {
+  position: relative;
+  display: inline-block;
+}
   </style>
 </head>
 
@@ -19,7 +34,12 @@
 
       <div class="row">
         <div class="box-medium">
-          <h1 id="joke">   
+          
+          <a onclick="getChuck()" class="tooltip">
+            <i style="font-size:48px;" class="fa fa-refresh fa-spin-hidden" alt="click to refresh"></i>
+            <i style="font-size:48px;color: var(--unholy-main);" class="fa fa-refresh fa-spin fa-spin-show" alt="click to refresh"></i>
+          </a>
+          <h1 id="joke"> 
         </div>
         <div class="box-medium">
             <div class="wrapper">
